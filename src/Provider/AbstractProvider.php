@@ -541,6 +541,7 @@ abstract class AbstractProvider
             );
         }
         $prepared = $this->prepareAccessTokenResponse($response);
+        $prepared['access_token'] = $prepared['id_token'];
         $token    = $this->createAccessToken($prepared, $grant);
 
         return $token;
